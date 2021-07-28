@@ -1,9 +1,8 @@
+#include <stdio.h>
 #include <iostream>
 #include <cmath>
-using namespace std;
 int main(){
-    char s1[],s2[];
-    cin >> s1 >> s2;
-    cout << s2;
-    return 0;
+    // char site[7] = {'S', 'T', 'R', 'I', 'N', 'G', '\0'};
+    char site[7] = {'S', 'T', 'R', 'I', 'N'};
+    printf("%s\n", site);
 }
