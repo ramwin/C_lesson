@@ -65,9 +65,25 @@
     ```
 
 
+## 结构体
+
+    ```
+    struct Person {
+        char name[30];
+        int age;
+        int id;
+    };
+
+    int main() {
+        struct Person person = {"张三", 18, 1};
+        printf(person.name);
+        return 0;
+    };
+    ```
+
 ## 头文件;包;多文件
 [链接](https://www.runoob.com/cprogramming/c-header-files.html)
-1. gcc lib.c test.c
+1. gcc test.c
 这样test.c里面可以直接用lib.c里面的函数，但是有warning, 因为编译test.c时不知道函数从哪来
 
 2. 使用头文件引入
