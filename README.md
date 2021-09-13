@@ -65,7 +65,24 @@
     ```
 
 
+## 指针
+### 定义指针
+
+    ```
+    struct Student *p;  // 定义结构体的指针
+    p = &student
+    p + 1  // 这样会直接增加strudent的size
+    ```
+
+### 使用指针
+
+    ```
+    p->age;  // 获取p对应的student的age
+    ```
+
+
 ## 结构体
+[例子](./pointer_struct.c)
 
     ```
     struct Person {
