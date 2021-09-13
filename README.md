@@ -118,3 +118,18 @@
     #include "lib.c"  // 引入当前目录下
     #include <stdio.h>  // 引入系统目录
     ```
+
+## time.h
+[runoob](https://www.runoob.com/cprogramming/c-standard-library-time-h.html)
+[例子](./time.c)
+    
+    ```
+    time_t rawtime;
+    time(&rawtime);  // 内部把 rawtime 的值变了
+    或者 rawtime = time(NULL);  // 外部赋予了rawtime的值
+    这样rawtime就是时间戳(秒)了
+
+    struct tm *info;  // info 指向一个tm的指针
+    info = localtime(&rawtime);  // 把rawtime的指针传入得到info
+    info->tm_sec;  // 获取秒
+    ```
