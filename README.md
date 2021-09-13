@@ -45,12 +45,22 @@
 
 
 ### 字符串
+* 赋值
+
+    ```
+    #include <string.h>
+    strcpy( Student.name, "ramwin");
+    ```
+
 * [格式化](https://www.runoob.com/cprogramming/c-function-printf.html)
 
     ```
     printf("%lu", <32位无符号整数>)
     printf("%s", <字符串>)
     ```
+
+
+## 判断
 
 
 ## 数组
