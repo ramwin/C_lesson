@@ -108,6 +108,18 @@
     };
     ```
 
+## 预处理器
+理解成编译前执行文本替换的操作
+
+    ```
+    #include <stdio.h>
+    #define MAX_ARRAY_LENGTH 20
+
+    int main() {
+        printf("最大的长度是: %d\n", MAX_ARRAY_LENGTH);
+    }
+    ```
+
 ## 头文件;包;多文件
 [链接](https://www.runoob.com/cprogramming/c-header-files.html)
 1. gcc test.c
