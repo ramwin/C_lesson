@@ -145,3 +145,15 @@
     info = localtime(&rawtime);  // 把rawtime的指针传入得到info
     info->tm_sec;  // 获取秒
     ```
+
+## 内存分配方式
+* [内存地址不是按照顺序申请的](内存地址不是按照顺序申请的)
+    ```
+    t, z, o 可能分配到一起
+    char t = 'b';
+    printf("变量t的内存地址: %d\n", &t);
+    int x = 0;  // x的内存会放到后面。
+    printf("变量x的内存地址: %d\n", &x);
+    char z = 'a';
+    char o;
+    ```

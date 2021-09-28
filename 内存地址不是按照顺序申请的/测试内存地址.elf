@@ -1,0 +1,155 @@
+.debug_info 节的内容:
+
+  编译单元 @ 偏移 0x0:
+   长度：        0x124 (32-bit)
+   版本：        5
+   Unit Type:     DW_UT_compile (1)
+   缩写偏移量：    0x0
+   指针大小：    8
+ <0><c>：缩写编号：3 (DW_TAG_compile_unit)
+    <d>   DW_AT_producer    : (indirect string, offset: 0x13): GNU C17 11.1.0 -mtune=generic -march=x86-64 -g
+    <11>   DW_AT_language    : 29	(C11)
+    <12>   DW_AT_name        : (indirect line string, offset: 0x0): 测试内存地址.c
+    <16>   DW_AT_comp_dir    : (indirect line string, offset: 0x15): /home/wangx/github/C_lesson
+    <1a>   DW_AT_low_pc      : 0x1149
+    <22>   DW_AT_high_pc     : 0x179
+    <2a>   DW_AT_stmt_list   : 0x0
+ <1><2e>：缩写编号：2 (DW_TAG_base_type)
+    <2f>   DW_AT_byte_size   : 8
+    <30>   DW_AT_encoding    : 7	(unsigned)
+    <31>   DW_AT_name        : (indirect string, offset: 0x42): long unsigned int
+ <1><35>：缩写编号：2 (DW_TAG_base_type)
+    <36>   DW_AT_byte_size   : 4
+    <37>   DW_AT_encoding    : 7	(unsigned)
+    <38>   DW_AT_name        : (indirect string, offset: 0x47): unsigned int
+ <1><3c>：缩写编号：2 (DW_TAG_base_type)
+    <3d>   DW_AT_byte_size   : 1
+    <3e>   DW_AT_encoding    : 8	(unsigned char)
+    <3f>   DW_AT_name        : (indirect string, offset: 0x54): unsigned char
+ <1><43>：缩写编号：2 (DW_TAG_base_type)
+    <44>   DW_AT_byte_size   : 2
+    <45>   DW_AT_encoding    : 7	(unsigned)
+    <46>   DW_AT_name        : (indirect string, offset: 0x0): short unsigned int
+ <1><4a>：缩写编号：2 (DW_TAG_base_type)
+    <4b>   DW_AT_byte_size   : 1
+    <4c>   DW_AT_encoding    : 6	(signed char)
+    <4d>   DW_AT_name        : (indirect string, offset: 0x56): signed char
+ <1><51>：缩写编号：2 (DW_TAG_base_type)
+    <52>   DW_AT_byte_size   : 2
+    <53>   DW_AT_encoding    : 5	(signed)
+    <54>   DW_AT_name        : (indirect string, offset: 0x77): short int
+ <1><58>：缩写编号：4 (DW_TAG_base_type)
+    <59>   DW_AT_byte_size   : 4
+    <5a>   DW_AT_encoding    : 5	(signed)
+    <5b>   DW_AT_name        : int
+ <1><5f>：缩写编号：2 (DW_TAG_base_type)
+    <60>   DW_AT_byte_size   : 8
+    <61>   DW_AT_encoding    : 5	(signed)
+    <62>   DW_AT_name        : (indirect string, offset: 0x67): long int
+ <1><66>：缩写编号：2 (DW_TAG_base_type)
+    <67>   DW_AT_byte_size   : 1
+    <68>   DW_AT_encoding    : 6	(signed char)
+    <69>   DW_AT_name        : (indirect string, offset: 0x5d): char
+ <1><6d>：缩写编号：5 (DW_TAG_const_type)
+    <6e>   DW_AT_type        : <0x66>
+ <1><72>：缩写编号：6 (DW_TAG_subprogram)
+    <73>   DW_AT_external    : 1
+    <73>   DW_AT_name        : (indirect string, offset: 0x70): printf
+    <77>   DW_AT_decl_file   : 2
+    <78>   DW_AT_decl_line   : 332
+    <7a>   DW_AT_decl_column : 12
+    <7b>   DW_AT_prototyped  : 1
+    <7b>   DW_AT_type        : <0x58>
+    <7f>   DW_AT_declaration : 1
+    <7f>   DW_AT_sibling     : <0x8a>
+ <2><83>：缩写编号：7 (DW_TAG_formal_parameter)
+    <84>   DW_AT_type        : <0x8a>
+ <2><88>：缩写编号：8 (DW_TAG_unspecified_parameters)
+ <2><89>：缩写编号：0
+ <1><8a>：缩写编号：9 (DW_TAG_pointer_type)
+    <8b>   DW_AT_byte_size   : 8
+    <8c>   DW_AT_type        : <0x6d>
+ <1><90>：缩写编号：10 (DW_TAG_subprogram)
+    <91>   DW_AT_external    : 1
+    <91>   DW_AT_name        : (indirect string, offset: 0x62): main
+    <95>   DW_AT_decl_file   : 1
+    <96>   DW_AT_decl_line   : 3
+    <97>   DW_AT_decl_column : 5
+    <98>   DW_AT_type        : <0x58>
+    <9c>   DW_AT_low_pc      : 0x1149
+    <a4>   DW_AT_high_pc     : 0x179
+    <ac>   DW_AT_frame_base  : 1 byte block: 9c 	(DW_OP_call_frame_cfa)
+    <ae>   DW_AT_call_all_tail_calls: 1
+ <2><ae>：缩写编号：1 (DW_TAG_variable)
+    <af>   DW_AT_name        : t
+    <b1>   DW_AT_decl_file   : 1
+    <b1>   DW_AT_decl_line   : 4
+    <b2>   DW_AT_decl_column : 10
+    <b3>   DW_AT_type        : <0x66>
+    <b7>   DW_AT_location    : 2 byte block: 91 49 	(DW_OP_fbreg: -55)
+ <2><ba>：缩写编号：1 (DW_TAG_variable)
+    <bb>   DW_AT_name        : x
+    <bd>   DW_AT_decl_file   : 1
+    <bd>   DW_AT_decl_line   : 6
+    <be>   DW_AT_decl_column : 9
+    <bf>   DW_AT_type        : <0x58>
+    <c3>   DW_AT_location    : 2 byte block: 91 4c 	(DW_OP_fbreg: -52)
+ <2><c6>：缩写编号：1 (DW_TAG_variable)
+    <c7>   DW_AT_name        : z
+    <c9>   DW_AT_decl_file   : 1
+    <c9>   DW_AT_decl_line   : 8
+    <ca>   DW_AT_decl_column : 10
+    <cb>   DW_AT_type        : <0x66>
+    <cf>   DW_AT_location    : 2 byte block: 91 4a 	(DW_OP_fbreg: -54)
+ <2><d2>：缩写编号：1 (DW_TAG_variable)
+    <d3>   DW_AT_name        : o
+    <d5>   DW_AT_decl_file   : 1
+    <d5>   DW_AT_decl_line   : 9
+    <d6>   DW_AT_decl_column : 10
+    <d7>   DW_AT_type        : <0x66>
+    <db>   DW_AT_location    : 2 byte block: 91 4b 	(DW_OP_fbreg: -53)
+ <2><de>：缩写编号：1 (DW_TAG_variable)
+    <df>   DW_AT_name        : a
+    <e1>   DW_AT_decl_file   : 1
+    <e1>   DW_AT_decl_line   : 12
+    <e2>   DW_AT_decl_column : 9
+    <e3>   DW_AT_type        : <0x58>
+    <e7>   DW_AT_location    : 2 byte block: 91 50 	(DW_OP_fbreg: -48)
+ <2><ea>：缩写编号：1 (DW_TAG_variable)
+    <eb>   DW_AT_name        : b
+    <ed>   DW_AT_decl_file   : 1
+    <ed>   DW_AT_decl_line   : 14
+    <ee>   DW_AT_decl_column : 9
+    <ef>   DW_AT_type        : <0x58>
+    <f3>   DW_AT_location    : 2 byte block: 91 54 	(DW_OP_fbreg: -44)
+ <2><f6>：缩写编号：1 (DW_TAG_variable)
+    <f7>   DW_AT_name        : c
+    <f9>   DW_AT_decl_file   : 1
+    <f9>   DW_AT_decl_line   : 16
+    <fa>   DW_AT_decl_column : 9
+    <fb>   DW_AT_type        : <0x58>
+    <ff>   DW_AT_location    : 2 byte block: 91 58 	(DW_OP_fbreg: -40)
+ <2><102>：缩写编号：1 (DW_TAG_variable)
+    <103>   DW_AT_name        : d
+    <105>   DW_AT_decl_file   : 1
+    <105>   DW_AT_decl_line   : 18
+    <106>   DW_AT_decl_column : 9
+    <107>   DW_AT_type        : <0x58>
+    <10b>   DW_AT_location    : 2 byte block: 91 5c 	(DW_OP_fbreg: -36)
+ <2><10e>：缩写编号：1 (DW_TAG_variable)
+    <10f>   DW_AT_name        : e
+    <111>   DW_AT_decl_file   : 1
+    <111>   DW_AT_decl_line   : 20
+    <112>   DW_AT_decl_column : 9
+    <113>   DW_AT_type        : <0x58>
+    <117>   DW_AT_location    : 2 byte block: 91 60 	(DW_OP_fbreg: -32)
+ <2><11a>：缩写编号：1 (DW_TAG_variable)
+    <11b>   DW_AT_name        : f
+    <11d>   DW_AT_decl_file   : 1
+    <11d>   DW_AT_decl_line   : 22
+    <11e>   DW_AT_decl_column : 9
+    <11f>   DW_AT_type        : <0x58>
+    <123>   DW_AT_location    : 2 byte block: 91 64 	(DW_OP_fbreg: -28)
+ <2><126>：缩写编号：0
+ <1><127>：缩写编号：0
+
