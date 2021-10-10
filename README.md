@@ -20,6 +20,13 @@
     /* 多行
     */
 
+## [数据类型](数据类型.c)
+* char 1字节
+* unsigned char 1字节
+* int 4字节
+* long 8字节
+
+
 ## 变量
 [链接](https://www.runoob.com/cprogramming/c-variables.html)
 
@@ -37,12 +44,6 @@
     >>> 4
     ```
 
-## 数据类型
-
-    ```
-    printf("int 存储大小: %lu \n", sizeof(int));
-    ```
-
 
 ### 字符串
 * 赋值
@@ -55,7 +56,8 @@
 * [格式化](https://www.runoob.com/cprogramming/c-function-printf.html)
 
     ```
-    printf("%lu", <32位无符号整数>)
+    printf("%lu", <32位无符号整数>)  // 但是lu也能显示超过32位的，怀疑有兼容
+    printf("%llu", <64位无符号整数>)
     printf("%s", <字符串>)
     ```
 
@@ -108,6 +110,13 @@
         printf(person.name);
         return 0;
     };
+    ```
+
+* [使用指针强转继承](./结构体/结构体继承.c)
+
+    ```
+    struct Person a;
+    struct Animal *f = (struct Animal *) &a;
     ```
 
 ## 预处理器
