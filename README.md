@@ -98,7 +98,6 @@
 
 [例子](./pointer_struct.c)
 
-    ```
     struct Person {
         char name[30];
         int age;
@@ -110,14 +109,24 @@
         printf(person.name);
         return 0;
     };
-    ```
 
 * [使用指针强转继承](./结构体/结构体继承.c)
 
-    ```
     struct Person a;
     struct Animal *f = (struct Animal *) &a;
-    ```
+
+
+* 如果强制访问超内存的结构体
+[测试](./结构体/超内存范围.c)  
+这样会导致结构体访问的内存不再是属于程序, 如果内存没有超过, 会导致误修改其他变量  
+
+
+    int a = 0;
+    int b = 18;
+    struct Person *person;
+    person = &a;
+    person->age = 32;  // b会变成32
+
 
 ## 预处理器
 理解成编译前执行文本替换的操作
@@ -170,4 +179,14 @@
     ```
 
 * [栈地址是从大往小申请,预计8M](./测试堆栈/栈地址大概8M.c)
+* 但是函数内部是按照顺序从小往大申请的
+* 函数变量，
+
+    外部函数
+        a
+        b = a + 4
+        c = b + 4
+        int(a, b)
+    二级函数int(x, y)
+        y最大 = c + 
 * 堆地址比栈的地址要小. 一般从小到大申请
