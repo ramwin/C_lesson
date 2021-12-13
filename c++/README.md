@@ -17,6 +17,13 @@ cin >> c >> d;
 输入123\n456, 输出竟然是123456 456
 ```
 
+* 输出
+```cpp
+cout << name;
+cerr << 'error';
+clog << "log message";
+```
+
 * 精度控制
 ```cpp
 cout << fixed << setprecision(4) << <double> << endl;
