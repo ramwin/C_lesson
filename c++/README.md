@@ -37,6 +37,9 @@ cout << fixed << setprecision(4) << <double> << endl;
     [](int x, int y){ return x + y; }(1, 2)  // 结果是3
 
 
+## 结构体
+其实c++里面的结构体就是类, 类就是结构体. [测试](./结构体-类.cpp)
+
 ## 类
 
     ```
