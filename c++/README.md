@@ -63,3 +63,5 @@ cout << fixed << setprecision(4) << <double> << endl;
 ## [模板](https://www.runoob.com/cplusplus/cpp-templates.html)
 模板设置参数后＝》模板函数  
 模板函数再次编译后才能调用  
+[同样的参数, 生成的模板函数的地址不一致](./模板-测试地址.cpp)
+
