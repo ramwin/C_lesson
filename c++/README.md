@@ -65,3 +65,19 @@ cout << fixed << setprecision(4) << <double> << endl;
 模板函数再次编译后才能调用  
 [同样的参数, 生成的模板函数的地址不一致](./模板-测试地址.cpp)
 
+## 命名空间
+
+* 基础用法
+
+    namespace first_space {
+        void func() {}
+    }
+    namespace second_space {
+        void func() {}
+    }
+    first_space::func()
+
+* 直接引入
+
+    using std::cout
+    cout << '';
