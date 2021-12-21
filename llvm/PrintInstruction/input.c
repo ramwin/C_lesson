@@ -5,6 +5,6 @@ int square(int x) {
 int main() {
     int b = 14;
     int c = b + 1;
-    // b += square(a);
+    b += square(c);
     return c;
 }

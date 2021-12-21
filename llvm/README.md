@@ -36,3 +36,28 @@ llvm:Instruction
 * llvm::BinaryOperator
 * llvm::UnaryInstruction
 包括load指令
+
+# AST
+## BasicBlock
+
+    for (auto &Inst: BB) {
+    }...
+
+## Instruction
+
+## IRBuilder
+
+* 生成builder
+
+    IRBuilder<> Builder(&Inst);
+
+* 创建函数调用
+注意，插入的指令会放在Inst的前面, 所以注意遇到函数插入的时候，要排除插入的函数, 不然死循环了
+
+    Builder.CreateCall(<*Function>)
+
+## Function
+
+* 获取某个函数的指针用于后期调用
+
+    Function *simple = <Module>.getFunction("函数名")
