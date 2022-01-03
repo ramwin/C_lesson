@@ -1,5 +1,8 @@
 # C_lession
-[官网](https://www.runoob.com/cprogramming/c-tutorial.html)
+
+[runoob官网](https://www.runoob.com/cprogramming/c-tutorial.html)  
+[微软文档](https://docs.microsoft.com/zh-cn/cpp/c-language)  
+
 
 ## 程序结构 [hello world](./hello_world.c)
 [教程](https://www.runoob.com/cprogramming/c-program-structure.html)
@@ -78,6 +81,7 @@
 
 
 ## 指针
+
 ### 定义指针
 
     ```
