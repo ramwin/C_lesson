@@ -2,6 +2,7 @@
 
 * %2 2号虚拟寄存器
 
+
     @square(i32 %0) {
         %2 = mul nsw i32 %0, 7
         ret i32 %2
@@ -9,6 +10,7 @@
 
 
 * alloca, store, load
+
 
     %1 = alloca i32, align 4  // 申请4字节内存，地址存入1号寄存器
     store i32 0, i32* %1, align 4  // 把数字0存入1号寄存器指向的地址
@@ -20,18 +22,33 @@
 
 * 乘法
 
+
     %2 = mul nsw i32 %0, 7  // nsw, No Signed Wrap
     %3 = mul i32 %2, 7
+
 
 # 指令
 
 llvm:Instruction
 [参考链接](https://llvm.org/doxygen/classllvm_1_1Instruction.html)
 
+    // 通过isa
+    if (isa<LoadInst>(Inst)) {
+        errs() << "是在载入指令啊";
+    }
+    // 通过isa
+    if (isa<LoadInst>(Inst)) {
+        errs() << "是在载入指令啊";
+    }
     if (auto *AI = dyn_cast<llvm:CallBase>Inst) {
         errs() << "这条指令是调用函数指令";
     }
 
+## llvm::LoadInst(llvm::UnaryInstruction)
+* 获取load对象 `inst->getOperand(0)`
+
+
+## 其他
 * llmv::CallBase
 * llvm::BinaryOperator
 * llvm::UnaryInstruction
@@ -42,8 +59,6 @@ llvm:Instruction
 
     for (auto &Inst: BB) {
     }...
-
-## Instruction
 
 ## IRBuilder
 
