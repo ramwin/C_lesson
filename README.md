@@ -7,23 +7,7 @@
 ## 程序结构 [hello world](./hello_world.c)
 [教程](https://www.runoob.com/cprogramming/c-program-structure.html)
 
-    # include <stdio.h>
-
-    int main()
-    {
-        /* 我的第一个 C 程序 */
-        printf("Hello, World! \n");
-        return 0;
-    }
-
-### main函数参数
-
-    int main(int argc, char * argv[]) {
-        printf("参数个数: %d\n", argc);
-        for (int i = 0; i < argc; i++) {
-            printf("%s\n", argv[i]);
-        }
-    };
+### [获取main函数的参考](./参数-main.c)
 
 
 ## 注释
