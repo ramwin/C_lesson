@@ -16,6 +16,16 @@
         return 0;
     }
 
+### main函数参数
+
+    int main(int argc, char * argv[]) {
+        printf("参数个数: %d\n", argc);
+        for (int i = 0; i < argc; i++) {
+            printf("%s\n", argv[i]);
+        }
+    };
+
+
 ## 注释
 [链接](https://www.runoob.com/cprogramming/c-basic-syntax.html)
 
