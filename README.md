@@ -188,3 +188,15 @@
     二级函数int(x, y)
         y最大 = c + 
 * 堆地址比栈的地址要小. 一般从小到大申请
+
+## binutil
+
+### nm
+```
+nm a.out | sort 看所有的符号的位置
+```
+
+### objdump
+```
+objdump -d --disassemble="函数名" <二进制文件>
+```
