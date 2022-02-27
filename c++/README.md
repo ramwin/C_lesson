@@ -22,6 +22,7 @@ cin >> c >> d;
 cout << name;
 cerr << 'error';
 clog << "log message";
+cout << static_cast<const void *>(&str) << endl;  # 通过强转地址成无类型指针来避免cout自动转化
 ```
 
 * 精度控制
@@ -81,3 +82,7 @@ cout << fixed << setprecision(4) << <double> << endl;
 
     using std::cout
     cout << '';
+
+## 字符串
+* [基本用法](./字符串.cpp)
+字符串的赋值会把字符复制过去
