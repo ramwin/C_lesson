@@ -126,17 +126,24 @@
     person->age = 32;  // b会变成32
 
 
-## 预处理器
+## [预处理器](https://docs.microsoft.com/zh-cn/cpp/preprocessor/preprocessor-directives?view=msvc-170)
 理解成编译前执行文本替换的操作
 
-    ```
-    #include <stdio.h>
-    #define MAX_ARRAY_LENGTH 20
+* define  
+```
+#include <stdio.h>
+#define MAX_ARRAY_LENGTH 20
 
-    int main() {
-        printf("最大的长度是: %d\n", MAX_ARRAY_LENGTH);
-    }
-    ```
+int main() {
+    printf("最大的长度是: %d\n", MAX_ARRAY_LENGTH);
+}
+```
+注意, define后面一定要加括号
+```
+#define WIDTH 80
+#define LENGTH + 10  // 注意，我是80 + 10 而不是 90
+var = LENGTH * 20;  会变成 80 + 10 * 20 = 280 而不是 180
+```
 
 ## 头文件;包;多文件
 [链接](https://www.runoob.com/cprogramming/c-header-files.html)
@@ -144,37 +151,37 @@
 这样test.c里面可以直接用lib.c里面的函数，但是有warning, 因为编译test.c时不知道函数从哪来
 
 2. 使用头文件引入
-    ```
-    #include "lib.c"  // 引入当前目录下
-    #include <stdio.h>  // 引入系统目录
-    ```
+```
+#include "lib.c"  // 引入当前目录下
+#include <stdio.h>  // 引入系统目录
+```
 
 ## time.h
 [runoob](https://www.runoob.com/cprogramming/c-standard-library-time-h.html)
 [例子](./time.c)
     
-    ```
-    time_t rawtime;
-    time(&rawtime);  // 内部把 rawtime 的值变了
-    或者 rawtime = time(NULL);  // 外部赋予了rawtime的值
-    这样rawtime就是时间戳(秒)了
+```
+time_t rawtime;
+time(&rawtime);  // 内部把 rawtime 的值变了
+或者 rawtime = time(NULL);  // 外部赋予了rawtime的值
+这样rawtime就是时间戳(秒)了
 
-    struct tm *info;  // info 指向一个tm的指针
-    info = localtime(&rawtime);  // 把rawtime的指针传入得到info
-    info->tm_sec;  // 获取秒
-    ```
+struct tm *info;  // info 指向一个tm的指针
+info = localtime(&rawtime);  // 把rawtime的指针传入得到info
+info->tm_sec;  // 获取秒
+```
 
 ## 内存分配方式
 * [内存地址不是按照顺序申请的](内存地址不是按照顺序申请的)
-    ```
-    t, z, o 可能分配到一起
-    char t = 'b';
-    printf("变量t的内存地址: %d\n", &t);
-    int x = 0;  // x的内存会放到后面。
-    printf("变量x的内存地址: %d\n", &x);
-    char z = 'a';
-    char o;
-    ```
+```
+t, z, o 可能分配到一起
+char t = 'b';
+printf("变量t的内存地址: %d\n", &t);
+int x = 0;  // x的内存会放到后面。
+printf("变量x的内存地址: %d\n", &x);
+char z = 'a';
+char o;
+```
 
 * [栈地址是从大往小申请,预计8M](./测试堆栈/栈地址大概8M.c)
 * 但是函数内部是按照顺序从小往大申请的
@@ -188,6 +195,13 @@
     二级函数int(x, y)
         y最大 = c + 
 * 堆地址比栈的地址要小. 一般从小到大申请
+
+## GCC
+* -E
+把文件预处理后输出, 不进行compiler proper(一般用后缀名.i)
+```
+gcc -E define.c -o define.i
+```
 
 ## binutil
 

@@ -43,23 +43,23 @@ cout << fixed << setprecision(4) << <double> << endl;
 
 ## 类
 
-    ```
-    class Person {
+```
+class Person {
+public:
+    int age;
+    int getage() {
+      return this->age;
+    }
+}
+class Women: public Person
+{
     public:
         int age;
         int getage() {
-          return this->age;
+          return this->age - 1;
         }
-    }
-    class Women: public Person
-    {
-        public:
-            int age;
-            int getage() {
-              return this->age - 1;
-            }
-    }
-    ```
+}
+```
 
 ## [模板](https://www.runoob.com/cplusplus/cpp-templates.html)
 模板设置参数后＝》模板函数  
@@ -70,19 +70,23 @@ cout << fixed << setprecision(4) << <double> << endl;
 
 * 基础用法
 
-    namespace first_space {
-        void func() {}
-    }
-    namespace second_space {
-        void func() {}
-    }
-    first_space::func()
+```
+namespace first_space {
+    void func() {}
+}
+namespace second_space {
+    void func() {}
+}
+first_space::func()
+```
 
 * 直接引入
 
-    using std::cout
-    cout << '';
+```
+using std::cout
+cout << '';
+```
 
 ## 字符串
-* [基本用法](./字符串.cpp)
+* [基本用法](./字符串.cpp)  
 字符串的赋值会把字符复制过去
