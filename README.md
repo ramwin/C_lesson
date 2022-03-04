@@ -197,11 +197,23 @@ char o;
 * 堆地址比栈的地址要小. 一般从小到大申请
 
 ## GCC
+[文档](https://zhuanlan.zhihu.com/p/39219541)
 * -E
 把文件预处理后输出, 不进行compiler proper(一般用后缀名.i)
 ```
 gcc -E define.c -o define.i
 ```
+* -S
+只进行编译(compiler proper)，而不进行链接(assemble)
+```
+gcc -S define.i -o define.s
+```
+* -c
+进行(compile)汇编或者(assemble)集成
+```
+gcc -c define.s -o define.o
+```
+* 最后链接
 
 ## binutil
 
