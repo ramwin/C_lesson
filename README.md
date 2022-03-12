@@ -7,7 +7,15 @@
 ## 程序结构 [hello world](./hello_world.c)
 [教程](https://www.runoob.com/cprogramming/c-program-structure.html)
 
-### [获取main函数的参考](./参数-main.c)
+### [获取main函数的参数](./参数-main.c)
+```
+int main(int argc, char * argv[]) {
+    printf("参数个数: %d\n", argc);
+    for (int i = 0; i < argc; i++) {
+        printf("%s\n", argv[i]);
+    }
+};
+```
 
 
 ## 注释
