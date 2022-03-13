@@ -32,11 +32,12 @@ cout << fixed << setprecision(4) << <double> << endl;
 
 ## Lambda 函数与表达式
 
-    [](int x, int y){ ++global_x; }
-    [](int x, int y){ return x < y; }
-    [](int x, int y) -> int { int z = x + y; return z + x; }
-    [](int x, int y){ return x + y; }(1, 2)  // 结果是3
-
+```
+[](int x, int y){ ++global_x; }
+[](int x, int y){ return x < y; }
+[](int x, int y) -> int { int z = x + y; return z + x; }
+[](int x, int y){ return x + y; }(1, 2)  // 结果是3
+```
 
 ## 结构体
 其实c++里面的结构体就是类, 类就是结构体. [测试](./结构体-类.cpp)
@@ -118,3 +119,7 @@ cout << '';
 ## Containers
 
 ## Vector
+
+## memory
+* [std::move](./std_move.cpp)
+用来复制对象的引用
