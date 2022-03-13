@@ -7,8 +7,15 @@ class Student {
   public:
     int age;
     string name;
+    Student(string name) :name(name) {};
     void hello() {
       cout << "你好，我的名字叫: " << name << "\n";
+    };
+    void display() {
+      cout << "我是学生: " << name << "\n";
+    };
+    ~Student() {
+      cout << "我 [" << name << "] 毕业了\n";
     };
 };
 

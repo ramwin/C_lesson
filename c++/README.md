@@ -85,9 +85,7 @@ struct B
 [同样的参数, 生成的模板函数的地址不一致](./模板-测试地址.cpp)
 
 ## 命名空间
-
 * 基础用法
-
 ```
 namespace first_space {
     void func() {}
@@ -123,3 +121,5 @@ cout << '';
 ## memory
 * [std::move](./std_move.cpp)
 用来复制对象的引用
+
+## [scope作用域](https://en.cppreference.com/w/cpp/language/scope)
