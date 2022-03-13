@@ -42,7 +42,6 @@ cout << fixed << setprecision(4) << <double> << endl;
 其实c++里面的结构体就是类, 类就是结构体. [测试](./结构体-类.cpp)
 
 ## 类
-
 ```
 class Person {
 public:
@@ -58,6 +57,14 @@ class Women: public Person
         int getage() {
           return this->age - 1;
         }
+}
+```
+
+* [销毁功能](类销毁.cpp)
+```
+struct B
+{
+    ~B() { cout << "啊，我死了\n"; }
 }
 ```
 
