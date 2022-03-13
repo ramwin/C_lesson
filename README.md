@@ -234,3 +234,11 @@ nm a.out | sort 看所有的符号的位置
 ```
 objdump -d --disassemble="函数名" <二进制文件>
 ```
+
+# stdlib
+* [atoi](https://www.delftstack.com/howto/c/c-string-to-int/#atoi-function-to-convert-a-string-to-an-integer-in-c)
+把字符串转化成数字
+```
+int atoi(const char *str);
+atoi("32") == 32;
+```

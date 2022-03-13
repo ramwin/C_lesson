@@ -88,8 +88,15 @@ cout << '';
 ```
 
 ## 字符串
+```
+#include <string>
+```
+
 * [基本用法](./字符串.cpp)  
 字符串的赋值会把字符复制过去
+
+* int isalnum( int ch );
+如果是[a-zA-Z0-9],则返回非0（不一定是8哦), 否则返回0
 
 ## Containers
 
