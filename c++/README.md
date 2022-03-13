@@ -59,8 +59,18 @@ class Women: public Person
         }
 }
 ```
+* 构造函数
+[样例](类销毁.cpp)
+```
+class Hobby {
+    public:
+        Hobby(string name) :name(name) {
+        }
+}
+```
 
-* [销毁功能](类销毁.cpp)
+* [析构函数:销毁功能]
+[样例](类销毁.cpp)
 ```
 struct B
 {
