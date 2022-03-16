@@ -123,3 +123,17 @@ cout << '';
 用来复制对象的引用
 
 ## [scope作用域](https://en.cppreference.com/w/cpp/language/scope)
+
+## 文件
+* std::ifstream
+```
+typedef basic_ifstream<char> 		ifstream;
+```
+
+* 读取文件直到换行符。注意换行符会被忽略
+```
+string a;
+ifstream infile;
+infile.open(<filename>)
+infile >> a;
+```
