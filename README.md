@@ -266,3 +266,12 @@ fgets(buff, 255, f);
 
 * `ftell(FILE *p)`
 返回当前文件的读取到的位置
+
+* fseek
+和python类似, 或者说python和C类似
+```
+fseek(FILE *p, -1, SEEK_END) 
+```
+
+* ftell
+返回当前的index
