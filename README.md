@@ -242,3 +242,27 @@ objdump -d --disassemble="函数名" <二进制文件>
 int atoi(const char *str);
 atoi("32") == 32;
 ```
+
+## 文件读写
+[runoob](https://www.runoob.com/cprogramming/c-file-io.html)  
+[示例](./file.c)  
+
+* FILE fgetc
+```
+FILE *fopen( const char * filename, const char * mode );
+FILE *f = fopen("123.txt", "r");
+int c = fgetc(f);
+char d = fgetc(f);
+printf("前两个字符是%c%c\n", c, d);
+```
+
+* fgets
+获取最多个255-1字符，写入字符串. 遇到换行符或者文件结束就结束. 然后会在字符串末尾加一个null
+```
+FILE *f = fopen("123.txt", "r");
+char buff[255];
+fgets(buff, 255, f);
+```
+
+* `ftell(FILE *p)`
+返回当前文件的读取到的位置
