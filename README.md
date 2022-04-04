@@ -179,6 +179,14 @@ info = localtime(&rawtime);  // 把rawtime的指针传入得到info
 info->tm_sec;  // 获取秒
 ```
 
+* [clock](https://en.cppreference.com/w/c/chrono/clock)
+```
+#include <time.h>
+clock_t start = clock();
+clock_t end = clock();
+printf("耗时: %u\n", end - start);
+```
+
 ## 内存分配方式
 * [内存地址不是按照顺序申请的](内存地址不是按照顺序申请的)
 ```

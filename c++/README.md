@@ -114,6 +114,12 @@ cout << '';
 * int isalnum( int ch );
 如果是[a-zA-Z0-9],则返回非0（不一定是8哦), 否则返回0
 
+* `ends_with(string)`
+返回是否以string结尾
+
+* substr(start, end)
+
+
 ## Containers
 
 ## Vector
