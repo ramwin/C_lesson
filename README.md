@@ -243,7 +243,7 @@ nm a.out | sort 看所有的符号的位置
 objdump -d --disassemble="函数名" <二进制文件>
 ```
 
-# stdlib
+## stdlib
 * [atoi](https://www.delftstack.com/howto/c/c-string-to-int/#atoi-function-to-convert-a-string-to-an-integer-in-c)
 把字符串转化成数字
 ```
@@ -283,3 +283,9 @@ fseek(FILE *p, -1, SEEK_END)
 
 * ftell
 返回当前的index
+
+## pthread
+[教程](https://www.geeksforgeeks.org/multithreading-c-2/)  
+[基础功能](thread.c)  
+[多线程-参数](./多线程-参数.c)
+
