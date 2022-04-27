@@ -1,3 +1,5 @@
+[cppreference](https://en.cppreference.com/w/cpp/header)
+
 ## 输入输出
 
     std::cout << "c=" << c << std::endl;
@@ -122,10 +124,34 @@ cout << '';
 
 ## Containers
 
+### [Map](https://en.cppreference.com/w/cpp/container/map)
+```
+std::map<std::string, int>
+std::map<int, int> dict;
+dict[2] = 3;
+dict.count(2) == 0
+```
+
+* count
+返回0或者1
+
+* `operator[]`
+返回某个元素。如果不存在就是dict.end
+
+* 迭代
+```
+void print(auto map) {
+    for (const pair: map) {
+        std::cout << pair.first << "=" << pari.second << end;
+    }
+}
+```
+
+
 ## Vector
 
 ## memory
-* [std::move](./std_move.cpp)
+* [std::move示例](./std_move.cpp)
 用来复制对象的引用
 
 ## [scope作用域](https://en.cppreference.com/w/cpp/language/scope)
