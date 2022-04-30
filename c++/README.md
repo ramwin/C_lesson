@@ -1,16 +1,41 @@
 [cppreference](https://en.cppreference.com/w/cpp/header)
 
+## 语法
+### while
+```
+while (condition) statement
+while (condition) {
+    statements
+}
+while (condition)
+  statements
+```
+
 ## 输入输出
 
-    std::cout << "c=" << c << std::endl;
-    using namespace std;
-    cout << "c=" << c << endl;
+### getchar
+获取一个stdin的字符
+```
+int a = getchar();  // 输入'a'
+cout << a;
+char b = getchar();  // 输入'a'
+cout << b;
+虽然cout的时候格式不一样(97, 'a')，但a==b会返回Ture
+```
+
+### cin
+```
+std::cout << "c=" << c << std::endl;
+using namespace std;
+cout << "c=" << c << endl;
+```
 
 * 输入
 如果是char，输入太多字符会导致只能保存前面的2个字符
 ```cpp
 cin >> a >> b;
 ```
+
 如果是`char[]`, 会导致内存是连续的
 ```cpp
 char c[3];
@@ -110,16 +135,30 @@ cout << '';
 #include <string>
 ```
 
-* [基本用法](./字符串.cpp)  
+### [基本用法](./字符串.cpp)  
 字符串的赋值会把字符复制过去
 
-* int isalnum( int ch );
+### `std::isspace(int ch)`:
+返回是否是空.  
+空的话返回Non-zero value, 非空返回0  
+
+### `int isalpha( int ch )`
+是不是字符[a-zA-Z]
+
+### `int isalnum( int ch )`;
 如果是[a-zA-Z0-9],则返回非0（不一定是8哦), 否则返回0
 
-* `ends_with(string)`
+### `ends_with(string)`
 返回是否以string结尾
 
-* substr(start, end)
+### strtod
+把字符串变成数字
+```
+const char* p = "111.11"
+double f = str::strtod(p, nullptr) // 111.11
+```
+
+### substr(start, end)
 
 
 ## Containers
