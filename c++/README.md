@@ -133,6 +133,8 @@ cout << '';
 ## 字符串
 ```
 #include <string>
+char p[] = {'1', '2', '3'};
+string result = p;  // 把C类型的字符串转化成c++的string. 但是字符串会被拷贝而不是引用
 ```
 
 ### [基本用法](./字符串.cpp)  

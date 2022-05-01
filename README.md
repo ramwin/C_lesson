@@ -44,27 +44,27 @@ int main(int argc, char * argv[]) {
 * sizeof(int/a/a[0])
 返回占用内存字节大小
 
-    ```
-    printf("%lu", sizeof(1));
-    >>> 4
-    ```
+```
+printf("%lu", sizeof(1));
+>>> 4
+```
 
 
 ### 字符串
 * 赋值
 
-    ```
-    #include <string.h>
-    strcpy( Student.name, "ramwin");
-    ```
+```
+#include <string.h>
+strcpy( Student.name, "ramwin");
+```
 
 * [格式化](https://www.runoob.com/cprogramming/c-function-printf.html)
 
-    ```
-    printf("%lu", <32位无符号整数>)  // 但是lu也能显示超过32位的，怀疑有兼容
-    printf("%llu", <64位无符号整数>)
-    printf("%s", <字符串>)
-    ```
+```
+printf("%lu", <32位无符号整数>)  // 但是lu也能显示超过32位的，怀疑有兼容
+printf("%llu", <64位无符号整数>)
+printf("%s", <字符串>)
+```
 
 
 ## 判断
