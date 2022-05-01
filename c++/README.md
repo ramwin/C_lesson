@@ -173,6 +173,14 @@ dict[2] = 3;
 dict.count(2) == 0
 ```
 
+### [Array](https://en.cppreference.com/w/cpp/container/array)
+```
+std:array<int, 10> list;
+std:array<char, 10> list;
+#include <algorithm>
+std:sort(std:array.begin(), std:array.end());
+```
+
 * count
 返回0或者1
 
