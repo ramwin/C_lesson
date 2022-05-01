@@ -174,12 +174,23 @@ dict.count(2) == 0
 ```
 
 ### [Array](https://en.cppreference.com/w/cpp/container/array)
+保存固定长度
 ```
 std:array<int, 10> list;
 std:array<char, 10> list;
 #include <algorithm>
 std:sort(std:array.begin(), std:array.end());
 ```
+
+### [Vector](en.cppreference.com/w/cpp/container/vector.html)
+保存动态长度
+```
+std:vactor<int> list = {1, 2, 3}
+list2 = list  // 复制是复制所有内存
+#include <algorithm>
+std:sort(list.begin(), list.end());  // 排序
+```
+
 
 * count
 返回0或者1
