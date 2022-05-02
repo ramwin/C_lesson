@@ -47,7 +47,7 @@ int test3() {
   std::map<int, int> dict;
   dict[2] = 3;
   dict[4] = 5;
-  auto i = dict.begin()->first;
+  auto i = dict.begin()->second;
   cout << i << endl;
   return 0;
 };

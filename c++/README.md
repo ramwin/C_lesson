@@ -86,6 +86,15 @@ class Women: public Person
           return this->age - 1;
         }
 }
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    // 支持三种输入的构造
+    TreeNode(): val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left), right(right) {}
+}
 ```
 * 构造函数
 [样例](类销毁.cpp)
@@ -196,6 +205,17 @@ list2 = list  // 复制是复制所有内存
 std:sort(list.begin(), list.end());  // 排序
 ```
 
+#### Element access
+* back
+最后一个元素
+* front
+第一个元素
+
+#### Modifiers
+* `pop_back`
+移除最后一个元素
+
+* `push_back`
 
 * count
 返回0或者1
@@ -212,8 +232,6 @@ void print(auto map) {
 }
 ```
 
-
-## Vector
 
 ## memory
 * [std::move示例](./std_move.cpp)
@@ -234,3 +252,13 @@ ifstream infile;
 infile.open(<filename>)
 infile >> a;
 ```
+
+
+## algorighm
+### heap
+* `make_heap(vector.begin(), vector.end())`
+把vector排成堆。first最大
+* `pop_head(vector.begin(), vector.end())`
+把最大的移动到最后
+* `std::push_head(v.begin(), v.end())`
+把最后的数字放入堆

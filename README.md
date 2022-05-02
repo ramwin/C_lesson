@@ -3,6 +3,13 @@
 [runoob官网](https://www.runoob.com/cprogramming/c-tutorial.html)  
 [微软文档](https://docs.microsoft.com/zh-cn/cpp/c-language)  
 
+# gdb
+* help
+* start
+* next
+* list
+* break+num
+* quit[q]
 
 ## 程序结构 [hello world](./hello_world.c)
 [教程](https://www.runoob.com/cprogramming/c-program-structure.html)
