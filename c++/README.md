@@ -171,6 +171,11 @@ std::map<std::string, int>
 std::map<int, int> dict;
 dict[2] = 3;
 dict.count(2) == 0
+
+// 迭代
+for (const auto& [key, value] : m) {
+    cout << '[' << key << "] = " << value << "; ";
+};
 ```
 
 ### [Array](https://en.cppreference.com/w/cpp/container/array)

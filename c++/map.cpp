@@ -14,20 +14,20 @@ void print(auto map) {
 
 int test1() {
   // 测试不存在的key, 会输出0
-    std::map<int, int> dict;
-    dict[1] = 3;
-    cout << dict[1] << endl;
-    // cout << dict[2] << endl;  // 这个输出0, 并且会导致2被加入dict
-    cout << "从dict里面找2: " << dict.count(2) << endl;
-    dict[2] = 3;
-    cout << "从dict里面找2: " << dict.count(2) << endl;
-    print(dict);
-    for (int i=0; i<=10000; i++) {
-      if (dict[i] != 0) {
-        cout << i << endl;
-      }
+  std::map<int, int> dict;
+  dict[1] = 3;
+  cout << dict[1] << endl;
+  // cout << dict[2] << endl;  // 这个输出0, 并且会导致2被加入dict
+  cout << "从dict里面找2: " << dict.count(2) << endl;
+  dict[2] = 3;
+  cout << "从dict里面找2: " << dict.count(2) << endl;
+  print(dict);
+  for (int i=0; i<=10000; i++) {
+    if (dict[i] != 0) {
+      cout << i << endl;
     }
-    return 0;
+  }
+  return 0;
 };
 
 int test2() {
@@ -42,11 +42,21 @@ int test2() {
   return 0;
 };
 
+int test3() {
+  cout << "测试随便获取一个元素" << endl;
+  std::map<int, int> dict;
+  dict[2] = 3;
+  dict[4] = 5;
+  auto i = dict.begin()->first;
+  cout << i << endl;
+  return 0;
+};
 
 int main() {
   cout << "测试1" << endl;
   test1();
   cout << "测试2" << endl;
   test2();
+  test3();
   return 0;
 }
