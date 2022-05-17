@@ -13,6 +13,14 @@ while (condition)
 
 ## 输入输出
 
+### getline
+获取一行的字符串
+```
+std:string name;
+std::getline(std::cin, name);
+cout << name << endl;
+```
+
 ### getchar
 获取一个stdin的字符
 ```
@@ -115,6 +123,27 @@ struct B
 }
 ```
 
+### Magic Method
+[案例](./magic_method.cpp)
+```
+class EvenBigger {
+  public:
+    int num;
+    EvenBigger(int num): num(num) {
+    };
+    bool operator<(EvenBigger another) {
+      cout << "比较" << num << " < " << another.num << endl;
+      if ((num % 2) == (another.num % 2)) {
+        return num < another.num;
+      }
+      if (num % 2 == 0) {
+        return false;
+      }
+      return true;
+    };
+};
+```
+
 ## [模板](https://www.runoob.com/cplusplus/cpp-templates.html)
 模板设置参数后＝》模板函数  
 模板函数再次编译后才能调用  
@@ -171,6 +200,14 @@ double f = str::strtod(p, nullptr) // 111.11
 
 ### substr(start, end)
 
+### Search
+* find
+```
+if (string.find(char) != string.npos) {
+    cout << "找到了"
+}
+```
+
 
 ## Containers
 
@@ -197,7 +234,7 @@ std:sort(std:array.begin(), std:array.end());
 ```
 
 ### [Vector](en.cppreference.com/w/cpp/container/vector.html)
-保存动态长度
+保存动态长度的列表
 ```
 std:vactor<int> list = {1, 2, 3}
 list2 = list  // 复制是复制所有内存
@@ -210,6 +247,16 @@ std:sort(list.begin(), list.end());  // 排序
 最后一个元素
 * front
 第一个元素
+
+#### iterators
+* rbegin
+反向迭代
+```
+  vector<char> a { 'a', 'b', 'c', 'd'};
+  for (auto i=a.rbegin(); i!=a.rend(); i++) {
+    cout << *i;
+  }
+```
 
 #### Modifiers
 * `pop_back`
