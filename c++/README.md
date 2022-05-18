@@ -177,6 +177,9 @@ string result = p;  // 把C类型的字符串转化成c++的string. 但是字符
 
 ### [基本用法](./字符串.cpp)  
 字符串的赋值会把字符复制过去
+```
+string a = string(10, 'a');  # 生成10个'a'
+```
 
 ### `std::isspace(int ch)`:
 返回是否是空.  
@@ -199,6 +202,11 @@ double f = str::strtod(p, nullptr) // 111.11
 ```
 
 ### substr(start, end)
+见`字符串.cpp test4`
+```
+string a = "abcd";
+string b = a.substr(1, 2);  // b的字符是从a拷贝过来的
+```
 
 ### Search
 * find
