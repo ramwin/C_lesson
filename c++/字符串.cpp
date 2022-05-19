@@ -40,6 +40,7 @@ void test3() {
 };
 
 
+// 测试substr得到的字符是否是复制的 是的
 void test4() {
   string a = "abcd";
   string b = a.substr(1, 2);
@@ -48,11 +49,33 @@ void test4() {
   cout << b << endl;
 };
 
+// 测试通过指针修改变量 是的，修改*i是直接修改的字符串
+void test5() {
+  string a = "abcd";
+  for (string::iterator i = a.begin(); i != a.end(); i++) {
+    if (*i == 'c') {
+      *i = 'd';
+    };
+  }
+  cout << a << endl;
+};
+
+// 测试数字转化超范围
+
+void test6() {
+  // -2147483648 ~ 2147483647 都可以
+  string c = "-2147483648";
+  int a = stoi(c);
+  cout << a << endl;
+};
+
 
 int main() {
   // test1();
   // test2();
   // test3();
-  test4();
+  // test4();
+  // test5();
+  test6();
   return 0;
 };

@@ -209,12 +209,18 @@ string b = a.substr(1, 2);  // b的字符是从a拷贝过来的
 ```
 
 ### Search
-* find
+* `size_type find(const basic_string &str)`
 ```
 if (string.find(char) != string.npos) {
     cout << "找到了"
 }
 ```
+
+### Constants
+npos 代表了不存在的字符位置。(实际等于0b111...111, 但是不要用-1)
+
+### 数字转化
+* stoi/stol/stoll 把字符变成整数
 
 
 ## Containers
