@@ -1,12 +1,17 @@
 #include <iostream>
 using namespace std;
 
+void test_sscan() {
+  char input[] = "25 54.32E-1 Thompson 56789 0123";
+  int a;
+  float b;
+  char c[10];
+  std::sscanf(input, "%d%f%9s", &a, &b, &c);
+  cout << "a = " << a << endl;
+  cout << "b = " << b << endl;
+  cout << "c = " << c << endl;
+};
+
 int main() {
-  // 如果是char， 只会读取到前2个字节。中文就乱码
-  char c[3];
-  char d[4];
-  cin >> c >> d;
-  cout << "c=" << c << endl;
-  cout << "d=" << d << endl;
-  return 0;
+  test_sscan();
 }

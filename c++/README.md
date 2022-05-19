@@ -11,7 +11,17 @@ while (condition)
   statements
 ```
 
-## 输入输出
+## 输入
+
+### sscanf
+把字符串根据指定的格式进行解析
+```
+char input[] = "25 54.32E-1 Thompson 56789 0123"
+int a;
+float b;
+char c[10]
+std::sscanf(input, "%d%f%9s", &a, &b, &c)
+```
 
 ### getline
 获取一行的字符串
@@ -44,7 +54,7 @@ cout << "c=" << c << endl;
 cin >> a >> b;
 ```
 
-如果是`char[]`, 会导致内存是连续的
+* 如果是`char[]`, 会导致内存是连续的
 ```cpp
 char c[3];
 char d[4];
@@ -52,7 +62,7 @@ cin >> c >> d;
 输入123\n456, 输出竟然是123456 456
 ```
 
-* 输出
+## 输出
 ```cpp
 cout << name;
 cerr << 'error';
