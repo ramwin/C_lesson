@@ -1,6 +1,13 @@
 [cppreference](https://en.cppreference.com/w/cpp/header)
 
 ## 语法
+### 引用
+[传递指针](../测试堆栈/传递指针.cpp)  
+从代码上看, 的确是只有引用, 没有栈内存, 但实际上汇编里, 一个函数应该不可能知道
+他操作哪个变量的. 所以要么就是汇编里实际上还是传递了指针, 要么就是把这个函数展开,
+放在外部函数里. 待测试(顺带测inline时是否要申请栈内存)
+
+
 ### while
 ```
 while (condition) statement

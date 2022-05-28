@@ -44,11 +44,12 @@ int main(int argc, char * argv[]) {
 
 ## 变量
 [链接](https://www.runoob.com/cprogramming/c-variables.html)
-
-    ```
-    int a;  a 的值不确定哦  // 10亿次需要2.076秒，快了大概3%
-    int a = 0; a 确定是0  // 10亿次需要2.143秒 
-    ```
+```
+int a;  a 的值不确定哦  // 10亿次需要2.076秒，快了大概3%
+int a = 0; a 确定是0  // 10亿次需要2.143秒 
+int a, b, c;
+a = b = c = 4;  // 可以同时赋值
+```
 
 ## 内置函数
 * sizeof(int/a/a[0])
