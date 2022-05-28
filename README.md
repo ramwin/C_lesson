@@ -40,6 +40,11 @@ int main(int argc, char * argv[]) {
 * unsigned char 1字节
 * int 4字节
 * long 8字节
+* range
+一组数据
+```
+{0, 1, 2, 3}
+```
 
 
 ## 变量
@@ -53,6 +58,7 @@ a = b = c = 4;  // 可以同时赋值
 
 ## 内置函数
 * sizeof(int/a/a[0])
+unary operator, 不是函数哦
 返回占用内存字节大小
 
 ```
@@ -70,12 +76,15 @@ strcpy( Student.name, "ramwin");
 ```
 
 * [格式化](https://www.runoob.com/cprogramming/c-function-printf.html)
-
 ```
 printf("%lu", <32位无符号整数>)  // 但是lu也能显示超过32位的，怀疑有兼容
 printf("%llu", <64位无符号整数>)
 printf("%s", <字符串>)
 ```
+    * %u: 无符号整数(short或者int)
+    * %d: 整数, short int
+    * %p: 地址
+    * %c: 字符
 
 
 ## 判断
@@ -300,3 +309,9 @@ fseek(FILE *p, -1, SEEK_END)
 [基础功能](thread.c)  
 [多线程-参数](./多线程-参数.c)
 
+## limits  
+* `INT_MIN`
+* `INT_MAX`
+* `UINT_MAX`
+* `SHRT_MIN`
+* `SHRT_MAX`
