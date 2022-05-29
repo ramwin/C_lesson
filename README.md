@@ -52,12 +52,34 @@ int main(int argc, char * argv[]) {
 
 
 ## 变量
-[链接](https://www.runoob.com/cprogramming/c-variables.html)
+[链接](https://www.runoob.com/cprogramming/c-variables.html)  
+局部变量的初始值是不确定的. 但是全局变量的初始值默认是0(估计是因为全局变量的值写入了elf)
 ```
 int a;  a 的值不确定哦  // 10亿次需要2.076秒，快了大概3%
 int a = 0; a 确定是0  // 10亿次需要2.143秒 
 int a, b, c;
 a = b = c = 4;  // 可以同时赋值
+int var; 声明并初始化var, 申请了变量的内存地址
+extern int var; 仅仅声明, 不需要编译器申请内存
+```
+* 寄存器变量
+```
+register int a;  // a保存在寄存器里, 不保证, 只是个hint
+```
+* static变量
+```
+static int a;  // 变量只能被当前文件访问
+另外一个好处是, 函数内的static, 运行完毕后不会被销毁. 所以全局静态变量可以放在函数内部. 并且这个变量只会被初始化一次
+int increment() {
+    static int a = 1; 必须赋予一个constant value, 不能等于一个变量
+    a++;
+    return a;
+};
+```
+* const常量
+```
+#define NAME value  // 但是这样会导致所有用的地方都赋值一份到内存吧
+const value
 ```
 
 ## 内置函数
@@ -164,7 +186,8 @@ printf("%s", <字符串>)
 ## [预处理器](https://docs.microsoft.com/zh-cn/cpp/preprocessor/preprocessor-directives?view=msvc-170)
 理解成编译前执行文本替换的操作
 
-* define  
+### define  
+只会替换token, 不会替换双引号内部的字符
 ```
 #include <stdio.h>
 #define MAX_ARRAY_LENGTH 20
@@ -173,12 +196,23 @@ int main() {
     printf("最大的长度是: %d\n", MAX_ARRAY_LENGTH);
 }
 ```
-注意, define后面一定要加括号
+注意, define后面一定要加括号, 先expansion 然后evaluation
 ```
 #define WIDTH 80
 #define LENGTH + 10  // 注意，我是80 + 10 而不是 90
 var = LENGTH * 20;  会变成 80 + 10 * 20 = 280 而不是 180
 ```
+* 多行
+```
+#define greater(x, y) if (x > y) \
+                        printf("x比较大")
+                      else
+                        print("y比较大")
+```
+* 特殊变量
+注意哦, 先expansion后evaluation. 所以这些都是固定的. 每次运行都是编译时候的数字
+`__DATE__` 日期
+`__TIME__` 时间
 
 ## 头文件;包;多文件
 [链接](https://www.runoob.com/cprogramming/c-header-files.html)
@@ -322,3 +356,5 @@ fseek(FILE *p, -1, SEEK_END)
 * `UINT_MAX`
 * `SHRT_MIN`
 * `SHRT_MAX`
+
+[next](https://www.youtube.com/watch?v=I1i0WgiRVXo&list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM&index=17)
