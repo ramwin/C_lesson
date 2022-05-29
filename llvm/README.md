@@ -1,3 +1,15 @@
+# 安装
+[文档](https://llvm.org/docs/GettingStarted.html#getting-the-source-code-and-building-llvm)
+```
+sudo apt install cmake  # 有cmake可以不执行
+git clone https://github.com/llvm/llvm-project.git
+cd llvm-project
+mkdir build
+cd build
+cmake -G Ninja -DCMAKE_BUILD_TYPE=release -DLLVM_ENABLE_PROJECTS="clang" ../llvm
+cmake --build . -j
+```
+
 # clang
 ```
 clang -O1 source.c -S -emit-llvm -o source.ll  # inline了

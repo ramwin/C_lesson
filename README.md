@@ -45,6 +45,10 @@ int main(int argc, char * argv[]) {
 ```
 {0, 1, 2, 3}
 ```
+### 小数
+* float  只能保留7位小数(根据系统而定)
+* double float
+* long double
 
 
 ## 变量
@@ -76,6 +80,7 @@ strcpy( Student.name, "ramwin");
 ```
 
 * [格式化](https://www.runoob.com/cprogramming/c-function-printf.html)
+输出并会返回输出内容的长度  
 ```
 printf("%lu", <32位无符号整数>)  // 但是lu也能显示超过32位的，怀疑有兼容
 printf("%llu", <64位无符号整数>)
@@ -85,6 +90,8 @@ printf("%s", <字符串>)
     * %d: 整数, short int
     * %p: 地址
     * %c: 字符
+    * %f: 浮点数, %.2f 必定保留2位小数
+    * %s: 字符串, %10s 必定保留至少10的宽度(前面加空格)
 
 
 ## 判断
