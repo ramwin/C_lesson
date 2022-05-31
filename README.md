@@ -38,13 +38,21 @@ int main(int argc, char * argv[]) {
 ## [数据类型](数据类型.c)
 * char 1字节
 * unsigned char 1字节
-* int 4字节
-* long 8字节
 * range
 一组数据
 ```
 {0, 1, 2, 3}
 ```
+
+### 整数
+```
+int a = 052;  // 八进制, 所以是42
+int a = 0x12;  // 十六进制;
+```
+* int 4字节(根据系统而定)
+* long 8字节(根据系统而定)
+
+
 ### 小数
 * float  只能保留7位小数(根据系统而定)
 * double float
@@ -76,6 +84,7 @@ int increment() {
     return a;
 };
 ```
+
 * const常量
 ```
 #define NAME value  // 但是这样会导致所有用的地方都赋值一份到内存吧
@@ -95,25 +104,36 @@ printf("%lu", sizeof(1));
 
 ### 字符串
 * 赋值
-
 ```
 #include <string.h>
 strcpy( Student.name, "ramwin");
 ```
 
-* [格式化](https://www.runoob.com/cprogramming/c-function-printf.html)
+# 输入输出
+
+## 输出
+
+### printf[格式化](https://www.runoob.com/cprogramming/c-function-printf.html)
 输出并会返回输出内容的长度  
 ```
 printf("%lu", <32位无符号整数>)  // 但是lu也能显示超过32位的，怀疑有兼容
 printf("%llu", <64位无符号整数>)
 printf("%s", <字符串>)
 ```
-    * %u: 无符号整数(short或者int)
-    * %d: 整数, short int
-    * %p: 地址
-    * %c: 字符
-    * %f: 浮点数, %.2f 必定保留2位小数
-    * %s: 字符串, %10s 必定保留至少10的宽度(前面加空格)
+* %u: 无符号整数(short或者int)
+* %d: 整数, short int
+* %p: 地址
+* %c: 字符
+* %f: 浮点数, %.2f 必定保留2位小数
+* %s: 字符串, %10s 必定保留至少10的宽度(前面加空格)
+* %o: 八进制数字
+* %x/%X: 十六进制数字(会根据x或者X变化大小写)
+
+## 输入scanf
+```
+int var, varb;
+scanf("%d%d", &var, &varb);  # 遇到space才输入, 所以可以输入"123 456\n" "123\n456\n"
+```
 
 
 ## 判断
@@ -121,14 +141,13 @@ printf("%s", <字符串>)
 
 ## 数组
 * 字符数组
-
-    ```
-    char a[6];
-    char a[6] = {"s", "t", "r", "i", "n", "g}  // 有人说最后要加\0, 但是我字符串都固定长度了，最后不需要加\0了吧。
-    print("%s", a)  // 只会输出 string，试了好多次，总觉得是gcc在最后默认加\0了, 测试验证，的确是的 a[6] 总是0, a[7]是随机。那不就内存不安全了吗，经过测试，应该是超过程序自带的内存就报错，否则是返回真正的内存的?
-    print("%lu\n", a[50])  // 总是不报错并且返回一个数字
-    print("%lu\n", a[5000])  // 有可能因为内存不够超过范围而报错
-    ```
+```
+char a[6];
+char a[6] = {"s", "t", "r", "i", "n", "g}  // 有人说最后要加\0, 但是我字符串都固定长度了，最后不需要加\0了吧。
+print("%s", a)  // 只会输出 string，试了好多次，总觉得是gcc在最后默认加\0了, 测试验证，的确是的 a[6] 总是0, a[7]是随机。那不就内存不安全了吗，经过测试，应该是超过程序自带的内存就报错，否则是返回真正的内存的?
+print("%lu\n", a[50])  // 总是不报错并且返回一个数字
+print("%lu\n", a[5000])  // 有可能因为内存不够超过范围而报错
+```
 
 
 ## 指针
@@ -273,6 +292,18 @@ char o;
         y最大 = c + 
 * 堆地址比栈的地址要小. 一般从小到大申请
 
+### 内存的分段
+通过`size a.out`来查看一个程序的分段
+* text  
+二进制代码
+* data
+注意, 初始化怎么判断的?, 根据是不是等于0判断的. 所以int a = 0; 仍然没有初始化
+初始化了的全局变量
+初始化了的static
+* bss
+没有初始化的static
+没有初始化的全局变量
+
 ## GCC
 [文档](https://zhuanlan.zhihu.com/p/39219541)
 * -E
@@ -357,4 +388,4 @@ fseek(FILE *p, -1, SEEK_END)
 * `SHRT_MIN`
 * `SHRT_MAX`
 
-[next](https://www.youtube.com/watch?v=I1i0WgiRVXo&list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM&index=17)
+[next](https://www.youtube.com/watch?v=5JXcX0IqRUo&list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM&index=22)
