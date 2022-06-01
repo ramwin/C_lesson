@@ -135,6 +135,34 @@ int var, varb;
 scanf("%d%d", &var, &varb);  # 遇到space才输入, 所以可以输入"123 456\n" "123\n456\n"
 ```
 
+## Operator
+* lvalue: 存在identifiable location in memory的object
+所以必须是变量. 不能是expression, function, const
+* rvalue: 不存在identifiable location
+表达式, 函数, 常量
+
+### binary operator
+`+, -, *, /, %, &&, ||, ==, !=, <=, >=, <, >`
+
+### unary operator
+++, --, 必须作用于lvalue  
+++a, pre-incrementing, 先加后用  
+a++, post-incrementing  
+
+## 编译原理
+
+### Lexical analysis
+第一步词法分析, 生成token  
+词法分析总是寻找最长匹配  
+`a+++b`变成token:`a ++ + b`
+`a + ++b`变成token: `a + ++ b`
+```
+a=4, b=3
+a+++b = 7
+a=4, b=3
+a + ++b = 8
+```
+a+++++b变成token: `a ++ ++ + b`, a++没问题,a++的结果是rvalue, 再++就error了
 
 ## 判断
 
