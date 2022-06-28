@@ -287,6 +287,12 @@ list2 = list  // 复制是复制所有内存
 std:sort(list.begin(), list.end());  // 排序
 ```
 
+* `iterator insert( iterator pos, value)`
+注意, 插入的时候, 如果最后的size大于vector的capacity, 会导致重新申请内存. 所以iterator pos就会失效
+
+    pointer = array.insert(pointer, value)  // 通过重新赋值,得到插入后的位置(pointer的相对偏移维持不变)
+
+
 #### Element access
 * back
 最后一个元素
