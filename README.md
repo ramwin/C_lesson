@@ -238,4 +238,4 @@ fseek(FILE *p, -1, SEEK_END)
 * `SHRT_MIN`
 * `SHRT_MAX`
 
-[next](https://www.youtube.com/watch?v=LJ0m-8zGRB4&list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM&index=65)
+[next](https://www.youtube.com/watch?v=LJ0m-8zGRB4&list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM&index=71)
