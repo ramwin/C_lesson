@@ -9,7 +9,7 @@
 
 
 ### while
-```
+```cpp
 while (condition) statement
 while (condition) {
     statements
@@ -133,7 +133,7 @@ class Hobby {
 
 * [析构函数:销毁功能]
 [样例](类销毁.cpp)
-```
+```cpp
 struct B
 {
     ~B() { cout << "啊，我死了\n"; }
@@ -142,7 +142,7 @@ struct B
 
 ### Magic Method
 [案例](./magic_method.cpp)
-```
+```cpp
 class EvenBigger {
   public:
     int num;
@@ -168,7 +168,7 @@ class EvenBigger {
 
 ## 命名空间
 * 基础用法
-```
+```cpp
 namespace first_space {
     void func() {}
 }
@@ -180,23 +180,37 @@ first_space::func()
 
 * 直接引入
 
-```
+```cpp
 using std::cout
 cout << '';
 ```
 
-## 字符串
-```
+## 字符串 string
+
+```cpp
 #include <string>
 char p[] = {'1', '2', '3'};
 string result = p;  // 把C类型的字符串转化成c++的string. 但是字符串会被拷贝而不是引用
 ```
 
-### [基本用法](./字符串.cpp)  
+### [string 字符串](https://en.cppreference.com/w/cpp/string/basic_string)  
+[基本用法](./字符串.cpp)  
+
 字符串的赋值会把字符复制过去
-```
-string a = string(10, 'a');  # 生成10个'a'
-```
+
+    ```cpp
+    string a = string(10, 'a');  # 生成10个'a'
+    ```
+
+* [find](https://en.cppreference.com/w/cpp/string/basic_string/find)
+[测试](string_find.cpp)
+
+查找字符串出现的位置。
+
+    ```cpp
+    string s = "12345";
+    s.find("23")  //  存在返回索引，否则返回 string::npos
+    ```
 
 ### `std::isspace(int ch)`:
 返回是否是空.  
