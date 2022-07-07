@@ -273,6 +273,13 @@ list2 = list  // 复制是复制所有内存
 std:sort(list.begin(), list.end());  // 排序
 ```
 
+### [set](https://en.cppreference.com/w/cpp/container/set)
+[基础](./set.cpp)
+* [insert](https://en.cppreference.com/w/cpp/container/set/insert)  
+    插入元素，返回pair, first是指向插入元素的iterator, second是bool,代表是否真的插入
+* erase  
+    返回bool代表是否真的移除
+
 #### Element access
 * back
 最后一个元素
