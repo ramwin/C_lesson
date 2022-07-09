@@ -294,6 +294,19 @@ std:sort(list.begin(), list.end());  // 排序
 * erase  
     返回bool代表是否真的移除
 
+* [find](https://en.cppreference.com/w/cpp/container/set/find)
+查找元素。返回iterator(=set.end()代表没找到)
+
+```cpp
+set<int>::iterator b;
+b = a.find(5);
+if (b == a.end()) {
+    cout << "没找到\n";
+} else {
+    cout << "找到了\n";
+}
+```
+
 #### Element access
 * back
 最后一个元素
