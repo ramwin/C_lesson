@@ -287,26 +287,6 @@ list2 = list  // 复制是复制所有内存
 std:sort(list.begin(), list.end());  // 排序
 ```
 
-### [set](https://en.cppreference.com/w/cpp/container/set)
-[基础](./set.cpp)
-* [insert](https://en.cppreference.com/w/cpp/container/set/insert)  
-    插入元素，返回pair, first是指向插入元素的iterator, second是bool,代表是否真的插入
-* erase  
-    返回bool代表是否真的移除
-
-* [find](https://en.cppreference.com/w/cpp/container/set/find)
-查找元素。返回iterator(=set.end()代表没找到)
-
-```cpp
-set<int>::iterator b;
-b = a.find(5);
-if (b == a.end()) {
-    cout << "没找到\n";
-} else {
-    cout << "找到了\n";
-}
-```
-
 #### Element access
 * back
 最后一个元素
@@ -344,6 +324,39 @@ void print(auto map) {
 }
 ```
 
+
+### [set](https://en.cppreference.com/w/cpp/container/set)
+[基础](./set.cpp)
+* [insert](https://en.cppreference.com/w/cpp/container/set/insert)  
+    插入元素，返回pair, first是指向插入元素的iterator, second是bool,代表是否真的插入
+* erase  
+    返回bool代表是否真的移除
+
+* [find](https://en.cppreference.com/w/cpp/container/set/find)
+查找元素。返回iterator(=set.end()代表没找到)
+
+```cpp
+set<int>::iterator b;
+b = a.find(5);
+if (b == a.end()) {
+    cout << "没找到\n";
+} else {
+    cout << "找到了\n";
+}
+```
+
+
+### [multiset](https://en.cppreference.com/w/cpp/container/multiset)
+和set一样，但是能保存一个元素很多次
+
+* erase(key)
+删除所有key
+
+* erase(iterator)
+仅仅删除某个iterator下的元素
+
+* iterator lower_bound(const Key& key)
+找到某个key的最小的iterator.
 
 ## memory
 * [std::move示例](./std_move.cpp)
