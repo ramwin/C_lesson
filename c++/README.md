@@ -233,7 +233,7 @@ double f = str::strtod(p, nullptr) // 111.11
 ```
 
 ### substr(start, end)
-见`字符串.cpp test4`
+从start开始复制end长度的字符串 见`字符串.cpp test4`
 ```
 string a = "abcd";
 string b = a.substr(1, 2);  // b的字符是从a拷贝过来的
