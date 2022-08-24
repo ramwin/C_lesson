@@ -4,3 +4,4 @@ test.c
 C语言经典100例
 build
 *.ll
+test.cpp

@@ -260,8 +260,13 @@ if (string.find(char) != string.npos) {
 ### Constants
 npos 代表了不存在的字符位置。(实际等于0b111...111, 但是不要用-1)
 
-### 数字转化
+### [数字转化](https://en.cppreference.com/w/cpp/string/basic_string/stol)
 * stoi/stol/stoll 把字符变成整数
+
+    ```
+    string a = 123;
+    int b = stoi(a);
+    ```
 
 
 ## Containers
