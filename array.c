@@ -1,23 +1,44 @@
 #include <stdio.h>
-// int main1() {
-//     char a[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
-//     printf("输出: %s \n", a);
-//     printf("输出: %lu \n", a[0]);
-//     printf("%lu", sizeof(1));
-//     printf("size of a0 : %lu\n", sizeof(a[0]));
-//     printf("size of a : %lu\n", sizeof(a));
-//     printf("a变量大小: %lu \n", sizeof(a));
-//     return 0;
-// }
+
+
+
+void print(int arr[], int size) {
+    for (int i=0; i<size; i++) {
+        printf("%d, ", arr[i]);
+    }
+    printf("\n");
+};
+
+
+void no_init() {
+    int no_init[1000];
+    printf("如果没有初始化, 值不一定为0, 是: %d\n", no_init[500]);
+};
+
+
+void init() {
+    int arr[10] = {[0]=1, [5]=2};
+    printf("可以部分初始化, 初始化不是0: %d\n", arr[5]);
+    printf("可以部分初始化, 其他都是0: %d\n", arr[3]);
+};
+
+void revers_designator() {
+    int arr[] = {[3]=2, [0]=0, 1, 2, 3, 4};
+    print(arr, sizeof(arr)/sizeof(arr[0]));
+};
+
+void variable_array_init() {
+    // 直接报错了, 无法编译
+    int y=5;
+    // int arr[y] = {0, 1, 2, 3};
+    // print(arr, sizeof(arr) / sizeof(arr[0]));
+};
+
 
 int main() {
-    char arr[5] = { 'H', 'e', 'l', 'l', 'o'};
-    printf("%s\n", arr);
-    printf("double: %lu\n", sizeof(double));
-    printf("double: %lu\n", sizeof(float));
-    int a;
-    a += 1;
-    // int a
-    printf("a: %d\n", a);
+    no_init();
+    init();
+    revers_designator();
+    // variable_array_init();
     return 0;
 }
