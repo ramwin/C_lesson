@@ -208,9 +208,9 @@ string result = p;  // 把C类型的字符串转化成c++的string. 但是字符
 
 字符串的赋值会把字符复制过去
 
-    ```cpp
-    string a = string(10, 'a');  # 生成10个'a'
-    ```
+```cpp
+string a = string(10, 'a');  # 生成10个'a'
+```
 
 * [find](https://en.cppreference.com/w/cpp/string/basic_string/find)
 [测试](string_find.cpp)
@@ -288,7 +288,8 @@ std:array<char, 10> list;
 std:sort(std:array.begin(), std:array.end());
 ```
 
-### [Vector](en.cppreference.com/w/cpp/container/vector.html)
+### Vector
+[官网](en.cppreference.com/w/cpp/container/vector.html)
 保存动态长度的列表
 ```
 std:vactor<int> list = {1, 2, 3}
@@ -300,7 +301,9 @@ std:sort(list.begin(), list.end());  // 排序
 * `iterator insert( iterator pos, value)`
 注意, 插入的时候, 如果最后的size大于vector的capacity, 会导致重新申请内存. 所以iterator pos就会失效
 
-    pointer = array.insert(pointer, value)  // 通过重新赋值,得到插入后的位置(pointer的相对偏移维持不变)
+```
+pointer = array.insert(pointer, value)  // 通过重新赋值,得到插入后的位置(pointer的相对偏移维持不变)
+```
 
 
 #### Element access
