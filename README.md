@@ -18,6 +18,27 @@
 
 # [基础语法](./基础语法.md)
 
+# 基础库 lib
+## string
+* strlen
+返回字符串的长度(不包含 `\0` )
+
+* strcpy(a, b)
+复制b指针对应的字符串到a指针, 包括null也会复制过去.
+
+* strncat(a, b, size) 更安全的strcat
+把size个字符从b复制到a的末尾
+
+* strcat(a, b)
+从b复制到a的末尾
+
+* strcmp
+比较2个字符串, 定义里是返回 `<0, =0, <0` 的值
+```
+printf("%d", strcmp("123", "234"));
+-1  // -1是特例
+```
+
 # 编译原理
 
 ## Lexical analysis
@@ -155,6 +176,8 @@ char o;
 没有初始化的static
 没有初始化的全局变量
 
+
+# 工具
 ## GCC
 [文档](https://zhuanlan.zhihu.com/p/39219541)
 * -E
