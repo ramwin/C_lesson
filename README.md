@@ -41,6 +41,30 @@ printf("%d", strcmp("123", "234"));
 
 # 编译原理
 
+## 动态库与静态库
+[runoob文档](https://www.runoob.com/w3cnote/cpp-static-library-and-dynamic-library.html)
+* 编译静态库
+静态库是指编译时, 把库的内容放入最终的target. 优点是移植方便. 缺点是重复占用内存.
+```shell
+gcc -c ramwin.c -o libramwin.a
+```
+* 使用静态库
+```shell
+gcc use.c \
+    -Istatic_lib \  # 支持引用static_lib里面的头文件
+    -Lstatic_lib/ -lramwin  # 把static_lib里面的 libramwin.a 也编译进来
+```
+
+* 编译动态库
+动态库在多个程序执行时, 库函数占用同一片内存. 动态库更新时, 可以免去程序重新编译部署的麻烦
+```shell
+gcc -fPIC -c ramwin.c -o libramwin.o  # -fPIC 创建与地址无关的编译程序（pic，position independent code），是为了能够在多个应用程序间共享。
+gcc -shared -o libramwin.so libramwin.o
+# 或者一次到位
+gcc -fPIC -shared -o libramwin.so ramwin.c
+```
+
+
 ## Lexical analysis
 第一步词法分析, 生成token  
 词法分析总是寻找最长匹配  
@@ -53,41 +77,6 @@ a=4, b=3
 a + ++b = 8
 ```
 a+++++b变成token: `a ++ ++ + b`, a++没问题,a++的结果是rvalue, 再++就error了
-
-
-## 指针
-
-### 定义指针
-```
-struct Student *p;  // 定义结构体的指针
-p = &student
-p + 1  // 这样会直接增加strudent的size
-```
-
-* 指针的优先级
-`[]`优先级比`*`高
-```
-int *ptr[10]; ptr是个数组(长度为10), 里面每个元素是int的指针
-int (*ptr)[10]; ptr是一个指针(数组第0个元素), 每个元素都是int
-```
-
-* 函数的指针
-```
-int add(int a, int )
-{
-    return a + b;
-}
-int (*f)(int, int) = &add;  // 实际上有没有&都可以, 因为编译器知道函数名是没有值的, 只有地址
-*f(1, 2)  // 实际上*有没有都可以, 因为f本身指针不支持执行函数, 所以没有语义歧义
-```
-
-### 使用指针
-
-```
-p->age;  // 获取p对应的student的age
-```
-
-
 
 
 ## [预处理器](https://docs.microsoft.com/zh-cn/cpp/preprocessor/preprocessor-directives?view=msvc-170)
