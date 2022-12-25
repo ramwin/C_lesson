@@ -64,6 +64,14 @@ gcc -shared -o libramwin.so libramwin.o
 gcc -fPIC -shared -o libramwin.so ramwin.c
 ```
 
+* 使用动态库
+```
+gcc ./use_dynamic.c  -L./dynamic_lib/ -lramwin
+./a.out  # 报错了
+./a.out: error while loading shared libraries: libramwin.so: cannot open shared object file: No such file or directory
+```
+因为系统执行的时候, 不知道从哪引入ramwin.so, 需要复制到/usr/lib下, 也可以复制到 `/usr/local/lib` 下, 但是执行前要设置`export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib`
+
 
 ## Lexical analysis
 第一步词法分析, 生成token  
