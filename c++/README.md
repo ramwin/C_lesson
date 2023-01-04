@@ -289,7 +289,7 @@ std:sort(std:array.begin(), std:array.end());
 ```
 
 ### Vector
-[官网](en.cppreference.com/w/cpp/container/vector.html)
+[官网](https://en.cppreference.com/w/cpp/container/vector.html)
 保存动态长度的列表
 ```
 std:vactor<int> list = {1, 2, 3}
@@ -313,7 +313,7 @@ pointer = array.insert(pointer, value)  // 通过重新赋值,得到插入后的
 第一个元素
 
 #### iterators
-* rbegin
+* rbegin => `vector<char>::iterator`
 反向迭代
 ```
   vector<char> a { 'a', 'b', 'c', 'd'};
