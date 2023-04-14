@@ -266,6 +266,14 @@ npos 代表了不存在的字符位置。(实际等于0b111...111, 但是不要�
 
 ## Containers
 
+### iterator
+* std::distance
+
+```
+vector<int>::iterator index = std::find(a.begin(), a.end(), 3);
+printf("4的位置是: %lu", std::distance(a.begin(), index));
+```
+
 ### [Map](https://en.cppreference.com/w/cpp/container/map)
 ```
 std::map<std::string, int>
