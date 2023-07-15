@@ -352,6 +352,8 @@ void print(auto map) {
 }
 ```
 
+### stack
+[测试](./stack.cpp)
 
 ### [set](https://en.cppreference.com/w/cpp/container/set)
 [基础](./set.cpp)
