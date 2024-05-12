@@ -1,3 +1,7 @@
+```{toctree}
+./基础语法.md
+```
+
 # [LLVM](./llvm/README.md)
 
 # [C++](./c++/README.md)
@@ -15,8 +19,6 @@
 * list
 * break+num
 * quit[q]
-
-# [基础语法](./基础语法.md)
 
 # 基础库 lib
 ## string

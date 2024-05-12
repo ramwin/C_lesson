@@ -66,7 +66,7 @@ cin >> a >> b;
 char c[3];
 char d[4];
 cin >> c >> d;
-输入123\n456, 输出竟然是123456 456
+// 输入123\n456, 输出竟然是123456 456
 ```
 
 * cin判断有没有结束
@@ -82,9 +82,9 @@ if (cin >> a) { // 如果输入字符串或者直接end, 就不会进入if了
 ## 输出
 ```cpp
 cout << name;
-cerr << 'error';
+cerr << "error";
 clog << "log message";
-cout << static_cast<const void *>(&str) << endl;  # 通过强转地址成无类型指针来避免cout自动转化
+cout << static_cast<const void *>(&str) << endl;  // 通过强转地址成无类型指针来避免cout自动转化
 ```
 
 * 精度控制
@@ -210,7 +210,7 @@ first_space::func()
 
 ```cpp
 using std::cout
-cout << '';
+cout << "";
 ```
 
 ## 字符串 string
@@ -227,7 +227,7 @@ string result = p;  // 把C类型的字符串转化成c++的string. 但是字符
 字符串的赋值会把字符复制过去
 
 ```cpp
-string a = string(10, 'a');  # 生成10个'a'
+string a = string(10, 'a');  // 生成10个'a'
 ```
 
 * [find](https://en.cppreference.com/w/cpp/string/basic_string/find)
