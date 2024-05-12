@@ -150,6 +150,24 @@ struct B
 }
 ```
 
+### class init 类的初始化
+* [stackover: how-do-class-members-get-initialized-if-i-dont-do-it-explicitly](https://stackoverflow.com/questions/3127454/how-do-class-members-get-initialized-if-i-dont-do-it-explicitly)
+```
+Person alice;  // 注意不能认为此时的alice.age是0
+```
+### class copy类的赋值，复制
+* 复制是直接复制内存的值过去的, [示例](./test_class_copy.cpp)
+```cpp
+int main() {
+  Person alice, bob;
+  alice.age = 19;
+  bob = alice;
+  alice.age = 20;
+  printf("BOB现在还是%d岁\n", bob.age);
+  printf("但是ALICE现在%d岁了\n", alice.age);
+}
+```
+
 ### Magic Method
 [案例](./magic_method.cpp)
 ```cpp

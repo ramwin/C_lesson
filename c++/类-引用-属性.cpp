@@ -32,7 +32,7 @@ class StudentWithScore {
 
 class Parent {
   public:
-    StudentWithScore: child
+    StudentWithScore student_with_score;
 };
 
 
