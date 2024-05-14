@@ -322,7 +322,9 @@ std:sort(std:array.begin(), std:array.end());
 
 ### Vector
 [官网](https://en.cppreference.com/w/cpp/container/vector.html)
-保存动态长度的列表
+* 保存动态长度的列表  
+* push的时候会把整个值复制到vector,不是指针  
+* 重新assign的时候会把内存复制过去，并且清空当前所有的元素  
 ```
 std:vactor<int> list = {1, 2, 3}
 list2 = list  // 复制是复制所有内存
