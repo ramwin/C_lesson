@@ -2,7 +2,10 @@
 ./基础语法.md
 ```
 
-# [LLVM](./llvm/README.md)
+# LLVM
+```{toctree}
+./llvm/README.md
+```
 
 # [C++](./c++/README.md)
 
@@ -44,6 +47,21 @@ printf("%d", strcmp("123", "234"));
 # 编译原理
 
 ## 动态库与静态库
+
+### youtube教程
+`https://www.youtube.com/watch?v=YtiPCPtmZrs`
+```
+gcc -fPIC(position indenpent code) -shared -
+gcc -I./include 来增加.h文件
+gcc -c ./src/main.c -I./include 只生成.o文件, 就是library; gcc main.o mymath.o -o prog 这个就是链接了.
+ar r(replace)c(create)s(create index) mymath.a mymath.o mymath2.o 避免每次都要发很多静态.o
+gcc -fPIC -shared ./src/mymath. -I./include.o -o libmymath.so(shared object)
+gcc ./src/main.c -o prog -I./include -lmymath(链接上mymath.so并且不需要lib和so) -L./(不然报错,需要告诉linker文件位置)
+./prog 报错, 因为无法找到libmymath.so. 因为runtime时不知道,需要设置LD_LIBRARY_PATH=""
+objdump -t ./prog 发现multi和add是未定义 UND 的
+```
+
+### runoob教程
 [runoob文档](https://www.runoob.com/w3cnote/cpp-static-library-and-dynamic-library.html)
 * 编译静态库
 静态库是指编译时, 把库的内容放入最终的target. 优点是移植方便. 缺点是重复占用内存.

@@ -1,3 +1,13 @@
+# Loop
+```{toctree}
+./loop.md
+```
+
+# inline
+```{toctree}
+./inline/README.md
+```
+
 # 安装
 [文档](https://llvm.org/docs/GettingStarted.html#getting-the-source-code-and-building-llvm)
 ```
