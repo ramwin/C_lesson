@@ -10,6 +10,7 @@ C语言学习
    :maxdepth: 3
    :caption: c:
 
+   ./lib.md
    ./README.md
 
 C++
