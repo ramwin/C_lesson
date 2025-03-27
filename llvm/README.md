@@ -20,10 +20,62 @@ cmake -G Ninja -DCMAKE_BUILD_TYPE=release -DLLVM_ENABLE_PROJECTS="clang" ../llvm
 cmake --build . -j
 ```
 
+# 术语
+内存编译器中的IR == 磁盘的bitcode == 可读的汇编码
+
 # clang
 ```
 clang -O1 source.c -S -emit-llvm -o source.ll  # inline了
 ```
+* -E 预处理
+
+    # 1 "global.point.c"
+    # 1 "./figure.h" 1
+    typedef struct {
+    }
+    # 2 "global.point.c" 2
+    Point g_point;
+
+* -fsyntax-only 预编译,解析,类型检查
+* -S 生成llvm
+
+     .text
+    .file "global.point.c"
+    GetPoint:
+        .cfi_startproc
+    # %bb.0
+    SetPoint:
+    ...
+
+* -c 全部,并且组合
+
+
+# LLVM使用
+* C源码转化成LLVM IR汇编码
+
+    clang -emit-llvm -S multiply.c -o multiply.ll
+
+* IR代码转化成bitcode
+
+    llvm-as test.ll -o test.bc  # 之后test.bc就能用来链接了
+    gcc main.o test.bc -o output && ./output
+
+* bitcode转回LLVM汇编码
+
+    llvm-dis test.bc –o test.ll
+
+* opt工具对IR进行优化
+
+    clang -emit-llvm -S multiply.c -o multiply.ll -Xclang -disable-O0-optnone
+    opt -mem2reg -S multiply.ll -o multiply1.ll
+
+* 链接bitcode
+
+    llvm-link test1.bc test2.bc -o output.bc
+
+* 执行bitcode
+
+    lli output.bc
 
 # ByteCode
 * %2 2号虚拟寄存器
@@ -103,9 +155,46 @@ IRBuilder<> Builder(&Inst);
 Builder.CreateCall(<*Function>)
 ```
 
+### IRBuilderBase
+* CreateCall
+
+## MapVector
+```
+class MapVector {
+    MapType Map;  // 保存数据类型
+    VectorType Vector;  // std::vector 保存数据
+    std::pari<iterator, bool> insert(std::pair) {
+    }
+}
+```
+
 ## Function
 
 * 获取某个函数的指针用于后期调用
 ```
 Function *simple = <Module>.getFunction("函数名")
+```
+
+## 注册
+
+```cpp
+llvm::PassPluginLibraryInfo function() {
+    a, b, c, lambda function
+    [](PassBuilder &PB) {
+        PB.registerPipelineParsingCalback(  # 重载运算符, 会根据参数返回对应函数
+            (StringRef Name, ModulePassManager &MPM,kj
+        )
+    }
+}
+extern "C" LLVM_ATTRIBUTE_WEAK ::llvm::PassPluginLibraryInfo
+llvmGetPassPluginInfo() {
+    return function    
+}
+```
+
+## 对每个函数操作
+```
+PreservedAnalyses <Module>::run(Function &Func, FunctionAnalysisManager &FAM) {
+    return PreservedAnalyses::all();
+}
 ```

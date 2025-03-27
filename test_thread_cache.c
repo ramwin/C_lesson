@@ -5,16 +5,12 @@
 #define size 20000000
 /*
  * 测试不同cacheline对应的速率
+ * 结果
+ * 同一个cacheline的单线程读写速度为 600+
+ * 循环的读写速度为(总是cachemiss)   82+
+ * 双线程对2个cacheline同时操作的速度(2个线程不抢占cacheline) 270+
+ * 双线程对同一个cacheline的操作速度(2个线程总是抢占cacheline) 119+
  * */
-void test1() {
-    // 2个线程操作同一个列表,导致每个CPU不断得cachemiss
-    // 速率慢
-};
-void test2() {
-    // 2个线程操作同一个列表,但是每个元素都由64字节
-    // 所以每个CPU不会cachemiss
-    // 速率块
-};
 
 struct Student1 {
     int age;
@@ -57,12 +53,13 @@ void test_cache() {
 
 
 void *test_thread2(void *arg) {
+    // 对64字节的数据进行双线程循环循环
     clock_t start, end;
     int start_index = *(int *)arg;
     printf("从数字: %d 开始执行\n", start_index);
     start = clock();
-    for (int i=start_index; i<size; i=i+2) {
-        students2[i].age += i;
+    for (int i=start_index; i<size; i++) {
+        students2[(start_index + 1) % 2].age += i;
     }
     end = clock();
     printf("%lu字节的循环速率为: %ld(%ld -> %ld)\n",
@@ -74,12 +71,16 @@ void *test_thread2(void *arg) {
 
 
 void *test_thread(void *arg) {
+    // 对32字节的数据进行双线程循环循环
     clock_t start, end;
     int start_index = *(int *)arg;
+    if (start_index == 1) {
+        start_index = 0;
+    }
     printf("从数字: %d 开始执行\n", start_index);
     start = clock();
-    for (int i=start_index; i<size; i=i+2) {
-        students1[i].age += i;
+    for (int i=start_index; i<size; i++) {
+        students1[(start_index + 1) % 2].age += i;
     }
     end = clock();
     printf("%lu字节的循环速率为: %ld(%ld -> %ld)\n",
@@ -124,6 +125,7 @@ int main() {
     for (int i=0; i<10; i++) {
         printf("%d %d %d\n", i, students1[i].age, students2[i].age);
     }
+    return 0;
     for (int i=0; i<size; i++) {
         if (students1[i].age != i * 2) {
             printf("数据冲突,报错\n");
