@@ -44,7 +44,7 @@ int main() {
   struct Student alice;
   alice.age = 18;
   students[18] = alice;
-  Student &bob = younger();
+  Student &bob = younger();  // 引用只能直接赋值，不能先初始化一个引用。
   // bob本身是引用，无地址。地址就是map里的地址了
   cout << "bob的地址\t" << &bob << endl;
   cout << bob.age << endl;
