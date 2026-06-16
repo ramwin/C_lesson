@@ -20,4 +20,11 @@ int main() {
   // 为什么0的地址反而小
   cout << "find后的tuple的地址\t" << &get<0>(scores[9]) << endl;
   cout << "find后的tuple的地址\t" << &get<1>(scores[9]) << endl;
+  int a;
+  string b;
+  auto [rank, desc] = scores[9];
+  cout << rank << desc << endl;
+  a = rank;
+  b = desc;
+  cout << a << b << endl;
 };
