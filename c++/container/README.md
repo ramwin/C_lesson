@@ -22,6 +22,12 @@ for (const auto& [key, value] : m) {
 };
 ```
 
+* find
+也可以直接用[key]获取
+find返回的是iterator. 如果没找到，返回`end()`; 找到了，就存在`->first`和`->second`
+first: map里的key
+second: map里的value,这个second直接就是
+
 ### [Array](https://en.cppreference.com/w/cpp/container/array)
 保存固定长度
 ```
