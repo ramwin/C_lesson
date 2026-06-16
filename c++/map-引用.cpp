@@ -33,6 +33,19 @@ void test_copy() {
   cout << "friends的size\t" << students[0].friends.size() << endl;
 };
 
+struct Student& younger() {
+  cout << "找到最年轻的人" << endl;
+  cout << "地址应该是:\t" << &students[18] << endl;
+  return students.begin() -> second;
+};
+
 int main() {
-  test_copy();
+  // test_copy();
+  struct Student alice;
+  alice.age = 18;
+  students[18] = alice;
+  Student &bob = younger();
+  // bob本身是引用，无地址。地址就是map里的地址了
+  cout << "bob的地址\t" << &bob << endl;
+  cout << bob.age << endl;
 };
