@@ -1,13 +1,12 @@
 ```{toctree}
 ./基础语法.md
+./c++/README.md
 ```
 
 # LLVM
 ```{toctree}
 ./llvm/README.md
 ```
-
-# [C++](./c++/README.md)
 
 # C_lession
 

@@ -1,6 +1,6 @@
-## Containers
+# Containers
 
-### iterator
+## iterator
 如果container的尺寸变化了, 旧的iterator都会失效
 * std::distance
 
@@ -9,7 +9,7 @@ vector<int>::iterator index = std::find(a.begin(), a.end(), 3);
 printf("4的位置是: %lu", std::distance(a.begin(), index));
 ```
 
-### [Map](https://en.cppreference.com/w/cpp/container/map)
+## [Map](https://en.cppreference.com/w/cpp/container/map)
 ```
 std::map<std::string, int>
 std::map<int, int> dict;
@@ -27,8 +27,12 @@ for (const auto& [key, value] : m) {
 find返回的是iterator. 如果没找到，返回`end()`; 找到了，就存在`->first`和`->second`
 first: map里的key
 second: map里的value,这个second直接就是
+* at
+获取某个元素,如果不存在会报错
+* `[]`
+获取某个元素,如果不存在会自动插入0
 
-### [Array](https://en.cppreference.com/w/cpp/container/array)
+## [Array](https://en.cppreference.com/w/cpp/container/array)
 保存固定长度
 ```
 std:array<int, 10> list;
@@ -37,7 +41,7 @@ std:array<char, 10> list;
 std:sort(std:array.begin(), std:array.end());
 ```
 
-### Vector
+## Vector
 [官网](https://en.cppreference.com/w/cpp/container/vector.html)
 * 保存动态长度的列表  
 * push的时候会把整个值复制到vector,不是指针  
